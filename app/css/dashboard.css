@@ -1,3 +1,7 @@
 .dashboard-container{
     margin-top: 50px;
 }
+
+.survey-box, .edit-survey-box, .dashboard-link, .result-link {
+    display: none;
+}

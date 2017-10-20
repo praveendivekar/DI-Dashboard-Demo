@@ -1,11 +1,24 @@
-$(document).ready(function(){
-    $('.admin-control').on('click', function(){
-        console.log('admin button clicked' );
-        window.location.href= ('html/admin-dashboard.html')
+userRole = {
+  init: function() {
+    this.initVariables();
+    this.initEvents();
+  },
+
+  initVariables: function() {},
+
+  initEvents: function() {
+    $(".admin-control").on("click", () => {
+      window.location.href = "html/dashboard.html";
+      sessionStorage.setItem('userRole', 'admin');
     });
 
-    $('.user-control').on('click', function(){
-        console.log('user button clicked' );
-        window.location.href = ('html/user-dashboard.html')
+    $(".user-control").on("click", () => {
+      window.location.href = "html/dashboard.html";
+      sessionStorage.setItem('userRole', 'user');
     });
-})
+  }
+};
+
+$(document).ready(function() {
+  userRole.init();
+});

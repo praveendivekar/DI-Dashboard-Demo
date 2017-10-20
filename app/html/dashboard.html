@@ -1,64 +1,52 @@
 <!doctype html>
-
 <html lang="en">
 
 <head>
     <meta charset="utf-8">
-
-    <title>Admin Dashboard</title>
+    <title>Dashboard</title>
     <meta name="description" content="DI Dashboard">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb"
         crossorigin="anonymous">
     <link rel="stylesheet" href="../css/dashboard.css">
-
 </head>
 
 <body>
 
-    <div class="container dashboard-container">
+    <div class="container survey-container">
         <div class="row">
             <div class="col-sm-12 text-center">
-                <p> Admin Dashboard</p>
+                <p>Dashboard</p>
             </div>
         </div>
 
-        <div class="row">
-            <ul class="nav">
-                <li class="nav-item">
-                    <a class="nav-link active" href="#">Survey</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Timer</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Result</a>
-                </li>
-            </ul>
-        </div>
-
-        <div class="row">
-            <div class='survey-box'>
-
+        <div class="row survey-options text-center">
+            <div class="col-sm-6">
+                <button type="button" class="btn btn-info start-survey">Start Survey</button>
+            </div>
+            <div class="col-sm-6">
+                <button type="button" class="btn btn-info edit-survey">Edit Survey</button>
             </div>
         </div>
 
-        <div class="row">
-            <div class='timer-box'>
-                <div class="col-sm-12 text-center">
-                        <button type="button" class="btn btn-info start-timer">Start Timer</button>
-                </div>
-                <p class='timer-value'></p>
-            </div>
+        <div class="row survey-box">
+            <p class='survey-question'></p>
+            <form class='option-box'></form>
+            <p class='timer-value'></p>
         </div>
 
-        <div class="row">
-            <div class='result-box'>
-
-            </div>
+        <div class="row edit-survey-box">
+            <input type='text' class='edit-question'>
+            <form class='option-box'></form>
+            <button type="button" class="btn btn-info save-survey">Save Survey</button>
         </div>
 
+        <div class= 'row message-box text-align'>
+            <p></p>
+        </div>
+
+        <a class="nav-link active dashboard-link" href="#">Back to dashbaord</a>
+        <a class="nav-link active result-link" href="#">Navigate to result</a>
     </div>
 
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
