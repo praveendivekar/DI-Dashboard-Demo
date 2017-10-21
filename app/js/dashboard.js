@@ -10,7 +10,7 @@ var dashboard = {
       question: "What is your blood group",
       options: ["A+ve", "AB+ve", "B+ve", "O+ve", "None of above"]
     };
-    this.timerValue = 5;
+    this.timerValue = 60;
     this.userRole = sessionStorage.getItem("userRole");
   },
 
@@ -31,7 +31,7 @@ var dashboard = {
     $(".dashboard-link").on("click", () => {
       $(".survey-box, .edit-survey-box, .dashboard-link, .message-box").hide();
       $(".survey-options").show();
-      $('.dashboard-container p').first().html('Dashboard')
+      $(".dashboard-container p").first().html("Dashboard");
     });
     $(".result-link").on("click", () => {
       window.location.href = "html/result.html";
@@ -48,7 +48,9 @@ var dashboard = {
 
   startSurvey: function() {
     let optionsElement = "";
-    $('.dashboard-container p').first().html('Survey')
+    $(".dashboard-container p")
+      .first()
+      .html("Survey");
     $(".survey-box .survey-question").html(this.surveyQuestion.question);
     $.map(this.surveyQuestion.options, option => {
       optionsElement +=
@@ -59,12 +61,21 @@ var dashboard = {
         "</label></div>";
     });
     $(".survey-box .option-box").html(optionsElement);
-    this.initiateTimer();
+    $(".timer-box p").FlipClock(this.timerValue, {
+      clockFace: "MinuteCounter",
+      countdown: true,
+      callbacks: {
+        stop: function() {
+          $(".message-box p").html("Time Over. Click on link to navigate to results page");
+          $(".message-box, .result-link").show();
+        }
+      }
+    });
   },
 
   editSurvey: function() {
     let optionsElement = "";
-    $('.dashboard-container p').first().html('Edit Survey')
+    $(".dashboard-container p").first().html("Edit Survey");
     $(".edit-survey-box").show(5000);
     $(".edit-survey-box .edit-question").val(this.surveyQuestion.question);
     $.map(this.surveyQuestion.options, option => {
@@ -85,22 +96,6 @@ var dashboard = {
     $(".edit-survey-box").hide();
     $(".dashboard-link, .message-box").show();
     $(".message-box p").html("Survey question updated");
-  },
-
-  initiateTimer: function() {
-    let timerValue = this.timerValue;
-    var x = setInterval(() => {
-      $(".timer-value").html(timerValue + "secs left ");
-      timerValue--;
-
-      if (timerValue < 0) {
-        clearInterval(x);
-        $(".message-box p").html(
-          "Time Over. Click on link to navigate to results page"
-        );
-        $(".message-box, .result-link").show();
-      }
-    }, 1000);
   }
 };
 

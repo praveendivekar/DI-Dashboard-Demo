@@ -9,3 +9,14 @@
 .edit-survey-box .option-box .input-group {
     margin: 5px;
 }
+
+.timer-box {
+    margin-top: 50px;
+    text-align: center;
+}
+
+.timer-box .flip-clock-wrapper{
+    width: auto;
+    display: inline-block;
+    margin: 2em;
+}
