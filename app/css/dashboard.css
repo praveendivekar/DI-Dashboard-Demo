@@ -2,6 +2,10 @@
     margin-top: 50px;
 }
 
-.survey-box, .edit-survey-box, .dashboard-link, .result-link {
+.survey-box, .edit-survey-box, .dashboard-link, .result-link, .message-box {
     display: none;
+}
+
+.edit-survey-box .option-box .input-group {
+    margin: 5px;
 }

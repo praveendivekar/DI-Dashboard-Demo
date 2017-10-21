@@ -13,35 +13,38 @@
 
 <body>
 
-    <div class="container survey-container">
+    <div class="container dashboard-container">
         <div class="row">
-            <div class="col-sm-12 text-center">
+            <div class="col-sm-12 text-center display-4">
                 <p>Dashboard</p>
             </div>
         </div>
 
         <div class="row survey-options text-center">
             <div class="col-sm-6">
-                <button type="button" class="btn btn-info start-survey">Start Survey</button>
+                <button type="button" class="btn btn-dark btn-lg start-survey">Start Survey</button>
             </div>
             <div class="col-sm-6">
-                <button type="button" class="btn btn-info edit-survey">Edit Survey</button>
+                <button type="button" class="btn btn-dark btn-lg edit-survey">Edit Survey</button>
             </div>
         </div>
 
         <div class="row survey-box">
             <p class='survey-question'></p>
             <form class='option-box'></form>
-            <p class='timer-value'></p>
+            <p class='timer-value '></p>
         </div>
 
         <div class="row edit-survey-box">
-            <input type='text' class='edit-question'>
+            <div class="input-group">
+                <span class="input-group-addon">Question</span>
+                <input type="text" class="edit-question form-control">
+            </div>
             <form class='option-box'></form>
-            <button type="button" class="btn btn-info save-survey">Save Survey</button>
+            <button type="button" class="btn btn-dark btn-lg save-survey">Save Survey</button>
         </div>
 
-        <div class= 'row message-box text-align'>
+        <div class='row message-box text-align alert alert alert-dark'>
             <p></p>
         </div>
 
