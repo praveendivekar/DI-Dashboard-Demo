@@ -31,7 +31,9 @@ var dashboard = {
     $(".dashboard-link").on("click", () => {
       $(".survey-box, .edit-survey-box, .dashboard-link, .message-box").hide();
       $(".survey-options").show();
-      $(".dashboard-container p").first().html("Dashboard");
+      $(".dashboard-container p")
+        .first()
+        .html("Dashboard");
     });
     $(".result-link").on("click", () => {
       window.location.href = "html/result.html";
@@ -66,7 +68,9 @@ var dashboard = {
       countdown: true,
       callbacks: {
         stop: function() {
-          $(".message-box p").html("Time Over. Click on link to navigate to results page");
+          $(".message-box p").html(
+            "Time Over. Click on link to navigate to results page"
+          );
           $(".message-box, .result-link").show();
         }
       }
@@ -75,8 +79,10 @@ var dashboard = {
 
   editSurvey: function() {
     let optionsElement = "";
-    $(".dashboard-container p").first().html("Edit Survey");
-    $(".edit-survey-box").show(5000);
+    $(".dashboard-container p")
+      .first()
+      .html("Edit Survey");
+    $(".edit-survey-box").show(1000);
     $(".edit-survey-box .edit-question").val(this.surveyQuestion.question);
     $.map(this.surveyQuestion.options, option => {
       optionsElement +=
